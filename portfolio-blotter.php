@@ -123,12 +123,10 @@ require('lib/common.php');
             url: 'lib/portfolio-netpnl.php',
             success: function(point) {
                 var today = new Date();
-                var hour = today.getHours();
-                var minutes = today.getMinutes();
-                if (hour >= 9 && hour <= 16) {
+                var start = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 20, 0, 0);
+                var end = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 16, 30, 0, 0);  
+                if (today >= start && today <= end) {
                     var series = chartNetPnL.series[0];
-                                // 
-                    // add the point
                     chartNetPnL.series[0].addPoint(point, true, false);
                 }
                 // call it again after 5 seconds
@@ -145,13 +143,8 @@ require('lib/common.php');
                 var today = new Date();
                 var start = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 20, 0, 0);
                 var end = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 16, 30, 0, 0);                
-                //var hour = today.getHours();
-                //var minutes = today.getMinutes();
-                //if (hour >= 9 && hour <= 16) {
                 if (today >= start && today <= end) {
                     var series = chartDelta.series[0];
-
-                    // add the point
                     chartDelta.series[0].addPoint(point, true, false);
                 }
                 // call it again after 5 seconds
@@ -166,12 +159,10 @@ require('lib/common.php');
             url: 'lib/portfolio-ytdpnl.php',
             success: function(point) {
                 var today = new Date();
-                var hour = today.getHours();
-                var minutes = today.getMinutes();
-                if (hour >= 9 && hour <= 16) {
+                var start = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 20, 0, 0);
+                var end = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 16, 30, 0, 0);   
+                if (today >= start && today <= end) {
                     var series = chartYtdPnL.series[0];
-
-                    // add the point
                     chartYtdPnL.series[0].addPoint(point, true, false);
                 }
                 // call it again after 5 seconds

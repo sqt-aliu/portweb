@@ -8,7 +8,8 @@ require('cfg/db.portfolios.php');
     <?php include('inc/header.php') ?>
     <title>Daily PnL Charts | Huatai Capital Investment Limited</title>     
    
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.1/highcharts.js"></script> 
+    <script type="text/javascript" src="//code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="//code.highcharts.com/modules/exporting.js"></script>    
     <script>
     var chart; // global
     
